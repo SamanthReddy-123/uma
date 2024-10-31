@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fab {
+  background-color: #1DB954;
+  border-radius: 50%;
+  width: 56;
+  height: 56;
+  margin: 16;
+}
+
+.player-controls {
+  background-color: #282828;
+}
+
+.song-title {
+  color: #FFFFFF;
+  font-size: 16;
+  font-weight: bold;
+}
+
+.artist-name {
+  color: #B3B3B3;
+  font-size: 14;
+}

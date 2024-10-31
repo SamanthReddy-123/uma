@@ -1,0 +1,11 @@
+<TabView androidTabsPosition="bottom" selectedTabTextColor="#1DB954" tabTextFontSize="12">
+    <TabViewItem title="Home" iconSource="font://&#xf015;" className="fas">
+        <Frame defaultPage="home/home-page" />
+    </TabViewItem>
+    <TabViewItem title="Search" iconSource="font://&#xf002;" className="fas">
+        <Frame defaultPage="search/search-page" />
+    </TabViewItem>
+    <TabViewItem title="Library" iconSource="font://&#xf0c2;" className="fas">
+        <Frame defaultPage="library/library-page" />
+    </TabViewItem>
+</TabView>

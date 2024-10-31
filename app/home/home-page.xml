@@ -1,0 +1,44 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="UMA" backgroundColor="#1DB954" color="white" />
+    
+    <GridLayout rows="*, auto">
+        <ScrollView row="0">
+            <StackLayout class="p-4">
+                <Label text="Recently Played" class="text-xl font-bold mb-4 text-white" />
+                <GridLayout columns="*,*" rows="auto" class="mb-4">
+                    <StackLayout col="0" class="m-1" tap="{{ onPlaylistTap }}">
+                        <Image src="~/images/playlist1.jpg" class="rounded-lg" height="150" />
+                        <Label text="Liked Songs" class="text-white mt-2" />
+                    </StackLayout>
+                    <StackLayout col="1" class="m-1" tap="{{ onPlaylistTap }}">
+                        <Image src="~/images/playlist2.jpg" class="rounded-lg" height="150" />
+                        <Label text="Daily Mix 1" class="text-white mt-2" />
+                    </StackLayout>
+                </GridLayout>
+
+                <Label text="Made for You" class="text-xl font-bold mb-4 text-white" />
+                <ListView items="{{ recommendations }}" height="200" class="mb-4">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto,*" class="p-2">
+                            <Image col="0" src="{{ image }}" class="rounded" width="50" height="50" />
+                            <StackLayout col="1" class="ml-2">
+                                <Label text="{{ name }}" class="text-white" />
+                                <Label text="{{ artist }}" class="text-gray-400" />
+                            </StackLayout>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Mini Player -->
+        <GridLayout row="1" columns="auto,*,auto" class="player-controls p-2">
+            <Image col="0" src="{{ currentTrack.image }}" class="rounded" width="40" height="40" />
+            <StackLayout col="1" class="ml-2">
+                <Label text="{{ currentTrack.name }}" class="song-title" />
+                <Label text="{{ currentTrack.artist }}" class="artist-name" />
+            </StackLayout>
+            <Button col="2" text="&#xf04b;" class="fas text-white" tap="{{ onPlayPause }}" />
+        </GridLayout>
+    </GridLayout>
+</Page>

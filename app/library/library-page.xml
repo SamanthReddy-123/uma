@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Your Library" backgroundColor="#1DB954" color="white" />
+    
+    <GridLayout rows="auto,*">
+        <GridLayout row="0" columns="*,auto" class="p-4">
+            <SearchBar col="0" hint="Find in library" />
+            <Button col="1" text="+" class="text-white" tap="{{ onCreatePlaylist }}" />
+        </GridLayout>
+
+        <ListView row="1" items="{{ playlists }}" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto,*,auto" class="p-2">
+                    <Image col="0" src="{{ image }}" class="rounded" width="50" height="50" />
+                    <StackLayout col="1" class="ml-2">
+                        <Label text="{{ name }}" class="text-white" />
+                        <Label text="{{ type }}" class="text-gray-400" />
+                    </StackLayout>
+                    <Label col="2" text="{{ songCount }} songs" class="text-gray-400" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>
